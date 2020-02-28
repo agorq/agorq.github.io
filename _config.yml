@@ -16,7 +16,7 @@
 title: Alperen Gürses
 email: alperengurses@outlook.com.tr
 description: >- # this means to ignore newlines until "baseurl:"
-  A blog about computer graphics and (hopefully) interesting appliances of them.
+  A blog about computer graphics and (hopefully) its interesting applications.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  agorq
