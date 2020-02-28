@@ -21,14 +21,16 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  agorq
 
-show_excerpts: true
-paginate: true
+show_excerpts: false
 
 # Build settings
 markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+disqus:
+  shortname: agorqgithubio
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

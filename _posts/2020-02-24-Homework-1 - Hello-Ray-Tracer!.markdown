@@ -3,6 +3,7 @@ layout: post
 title:  "Advanced Ray Tracing Homework 1 - Hello Ray Tracer"
 date:  2020-02-24
 categories: [Advanced Ray Tracing]
+comments: true
 ---
 
 ### Introduction
