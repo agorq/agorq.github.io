@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Advanced Ray Tracing Homework 1 - Hello Ray Tracer"
-date:  2020-02-24
+date:  2021-04-04
 categories: [Advanced_Ray_Tracing]
 comments: true
 ---
@@ -11,7 +11,7 @@ ______________________________
 
 Greetings!
 
-This post is first of the many to come posts about the raytracer I will be developing along the course "CENG 795 - Special Topics: Advanced Ray Tracing". Throughout the semester, I will be adding extra features to my ray tracer in intervals of once in two weeks. In this first iteration, we were expected to implement our basic math classes, XML parser, basic ray tracer classes (such as camera, shape, scene, etc.) and a basic shading model (Blinn-Phong).
+This post is first of the many to come posts about the raytracer I will be developing along the course "CENG 795 - Special Topics: Advanced Ray Tracing". Throughout the semester, I will be adding extra features to my ray tracer in intervals of once in two weeks. In this first iteration, we were expected to implement our XML parser and basic ray tracer classes (such as camera, shape, scene, etc.) and a basic shading model (Blinn-Phong).
 
 In the following sections, I will briefly explain the basic capabilities of my ray tracer, show my results in the given scenes and some of the interesting results I have came across during the implementation with a brief discussion.
 
@@ -105,88 +105,83 @@ function main:
  2. for each camera:
  3.     preprocess camera data
  4.     initialize image buffer
- 5.     for each pixels:
+ 5.     for each pixel:
  6.         create ray
  7.         send ray to the scene
  8.         if ray hits an object in scene:
  9.             compute the color of the object
-10.        else:
-11.            return the background color
+10.         else:
+11.             return the background color
 12.     write buffer to PNG file
 13.     deallocate the image buffer
 {% endhighlight %}
 
 
-As external resources for xml parsing I have used tinyxml and for saving the images as png files I have used lodepng.
+As external resources for xml parsing I have used tinyxml and for saving the images as png files I have used lodepng. To accelerate pixel color calculations I have used OpenMP library. OpenMP library is a definite recommendation for easy to apply CPU acceleration.
 
 ### Results:
 _______________________________
 
-For this homework provided scenes can be sorted by their complexity like this :
--simple.xml
--cornellbox.xml
--spheres.xml
--bunny.xml
--scienceTree.xml
+This step of the project had 6 scenes. The provided scenes can be sorted by their complexity like this :
+- two_spheres.xml
+- spheres.xml
+- simple.xml
+- cornellbox.xml
+- bunny.xml
+- scienceTree.xml
 
-First three scenes are pretty straight forward as they have less objects and therefore fast rendering times:
+First four scenes are pretty straight forward as they have less objects and therefore fast rendering times:
 {:refdef: style="text-align: center;"}
-![simple.xml rendering time : 0.324 seconds](/assets/img/advanced_ray_tracing_hw1/simple.png)
+![two_spheres.xml rendering time : 0.050 seconds](/assets/img/advanced_ray_tracing_hw1/two_spheres.png)
 {: refdef}
-<center><b> simple.xml </b></center>
-<center>rendering time : 0.324 seconds </center>
+<center><b> two_spheres.xml </b></center>
+<center>rendering time : 0.050 seconds </center>
 
 {:refdef: style="text-align: center;"}
-![cornellbox.xml rendering time : 0.324 seconds](/assets/img/advanced_ray_tracing_hw1/cornellbox.png)
-{: refdef}
-<center><b> cornellbox.xml </b></center>
-<center>rendering time : 0.849 seconds </center>
-
-{:refdef: style="text-align: center;"}
-![spheres.xml rendering time : 0.324 seconds](/assets/img/advanced_ray_tracing_hw1/spheres.png)
+![spheres.xml rendering time : 0.078 seconds](/assets/img/advanced_ray_tracing_hw1/spheres.png)
 {: refdef}
 <center><b> spheres.xml </b></center>
-<center>rendering time : 0.417 seconds </center>
+<center>rendering time : 0.078 seconds </center>
+
+{:refdef: style="text-align: center;"}
+![simple.xml rendering time : 0.084 seconds](/assets/img/advanced_ray_tracing_hw1/simple.png)
+{: refdef}
+<center><b> simple.xml </b></center>
+<center>rendering time : 0.084 seconds </center>
+
+{:refdef: style="text-align: center;"}
+![cornellbox.xml rendering time : 0.128 seconds](/assets/img/advanced_ray_tracing_hw1/cornellbox.png)
+{: refdef}
+<center><b> cornellbox.xml </b></center>
+<center>rendering time : 0.128 seconds </center>
 
 The bunny.xml and scienceTree.xml were the harder scenes as scienceTree had a higher resolution and bunny had the highest vertex count.
 
 {:refdef: style="text-align: center;"}
-![bunny.xml rendering time : 0.324 seconds](/assets/img/advanced_ray_tracing_hw1/bunny.png)
+![bunny.xml rendering time : 2.051 seconds](/assets/img/advanced_ray_tracing_hw1/bunny.png)
 {: refdef}
 <center><b> bunny.xml </b></center>
-<center>rendering time : 65.142 seconds </center>
+<center>rendering time : 2.051 seconds </center>
 
 {:refdef: style="text-align: center;"}
-![scienceTree.xml rendering time : 0.324 seconds](/assets/img/advanced_ray_tracing_hw1/scienceTree.png)
+![scienceTree.xml rendering time : 3.832 seconds](/assets/img/advanced_ray_tracing_hw1/scienceTree.png)
 {: refdef}
 <center><b> scienceTree.xml </b></center>
-<center>rendering time : 94.343 seconds </center>
+<center>rendering time : 3.832 seconds </center>
+
+
+<b> Machine specs: </b>\\
+<b> OS: </b> Windows 10 Pro 64-bit\\
+<b> Processor: </b> AMD Ryzen 5 3600X @ 3.80GHz × 6\\
+<b> Memory: </b> 32.0 GiB
 
 ### Some of the errors
-
-{:refdef: style="text-align: center;"}
-![](/assets/img/advanced_ray_tracing_hw1/phong_exponent_negative_cos_wrong_records.png)
-{: refdef}
-
-This was the first result I rendered after the initial debugging of the system. The result caused by lack of multiple important operations such as : color clamping, phong exponent, hit_record errors, cos sign checks etc.
-
-{:refdef: style="text-align: center;"}
-![](/assets/img/advanced_ray_tracing_hw1/shadow_epsilon _and_wrong_hit_record.png)
-{: refdef}
-
-Another render of the scene with persisting hit_record errors and shadow exponent problems.
 
 {:refdef: style="text-align: center;"}
 ![scienceTree.xml rendering time : 0.324 seconds](/assets/img/advanced_ray_tracing_hw1/simple_no_clamp.png)
 {: refdef}
 
 A render of simple scene without color clamping.
-
-{:refdef: style="text-align: center;"}
-![scienceTree.xml rendering time : 0.324 seconds](/assets/img/advanced_ray_tracing_hw1/triangle_bug.png)
-{: refdef}
-
-Another render of hit_record error in cornellbox scene.
 
 {:refdef: style="text-align: center;"}
 ![scienceTree.xml rendering time : 0.324 seconds](/assets/img/advanced_ray_tracing_hw1/unitness.png)
