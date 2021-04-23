@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Advanced Ray Tracing Homework 2 - Additional Materials and BVH"
-date:  2020-03-11
+date:  2021-04-23
 categories: [Advanced_Ray_Tracing]
 comments: true
 ---
