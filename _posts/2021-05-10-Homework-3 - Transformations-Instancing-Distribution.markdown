@@ -114,13 +114,13 @@ The results of these scenes with their BVH construction time and rendering times
 ![](/assets/img/advanced_ray_tracing_hw3/ellipsoids.png)
 {: refdef}
 
-During the correction of the mesh class I got some interesting results for the basic transformation scenes.
+During the correction of the mesh class, I got some interesting results for the basic transformation scenes.
 
 {:refdef: style="text-align: center;"}
 ![](/assets/img/advanced_ray_tracing_hw3/cornellbox_area.png)
 {: refdef}
 
-I also struggled a bit while trying to get the arealight to work. This error was caused by my dumb mistake of not multiplying the attenuation value by the luminance of the area light source.
+I also struggled a bit while trying to get the area light to work. This error was caused by my dumb mistake of not multiplying the attenuation value by the luminance of the area light source.
 
 
 {:refdef: style="text-align: center;"}
