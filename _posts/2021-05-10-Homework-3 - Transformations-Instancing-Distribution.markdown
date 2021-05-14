@@ -10,47 +10,47 @@ Greetings!
 
 In the third step of our ray tracer development we were expected to implement the following in two weeks:
 - **Transformation:** Addition of transformation matrices and updated BVH traversals to support these changes.
-- **Instancing:** As an addition to the transformations we were expected to add instancing for a better memory management.
-- **Distribution Ray Tracing:** As a final addition we were expected to implement some distribution ray tracing effects including area light, motion blur, etc.
+- **Instancing:** As an addition to the transformations we were expected to add instancing for better memory management.
+- **Distribution Ray Tracing:** As a final addition, we were expected to implement some distribution ray tracing effects including area light, motion blur, etc.
 
-In the following sections, I will briefly explain what I have done for each of these subjects, how they changed the structure of my ray tracer and conclude with results and some of the interesting results I got while working on them.
+In the following sections, I will briefly explain what I have done for each of these subjects, how they changed the structure of my ray tracer, and conclude with results and some of the interesting results I got while working on them.
 
 ### Transformations and Instancing
 ______________________________
-For the introduction of the transformations to the tracer, first thing required is matrices especially 4x4 ones. With the introduction of the matrix struct and basic matrix operations like transpose, inverse, matmul etc. I implemented a transformation class. Transformations keep a matrix and its inverse. All leaf hitables hold a transformation. The transformations we were required to implemented were the most basic ones (transformation, rotation and scaling).
+For the introduction of the transformations to the tracer, the first thing required is matrices especially 4x4 ones. With the introduction of the matrix struct and basic matrix operations like transpose, inverse, matmul, etc. I implemented a transformation class. Transformations keep a matrix and its inverse. All leaf hitables hold a transformation. The transformations we were required to implement were the most basic ones (transformation, rotation, and scaling).
 
-The biggest difficulty I had while implementing the transformations was correction of the misimplementation of meshes. In previous homeworks I was adding the triangles of the mesh to the hitable vector. The introduction of the transformations and instancing made this approach false as after adding the triangles it was impossible to instance them for different transformations and materials. To solve this I had to implement an actual mesh class which had its own bvh and other basic hitable variables.
+The biggest difficulty I had while implementing the transformations was the correction of the misimplementation of meshes. In previous homework, I was adding the triangles of the mesh to the hitable vector. The introduction of the transformations and instancing made this approach false as after adding the triangles it was impossible to instance them for different transformations and materials. To solve this I had to implement an actual mesh class that had its bvh and other basic hitable variables.
 
 #### Instancing 
 
-Instancing is a straightforward technique used for the prevention of storage of the same mesh over and over. An instance of a mesh points toward another meshes geometry data while storing its unique data such as material and transformation to create modified versions of them.
+Instancing is a straightforward technique used for the prevention of the storage of the same mesh over and over. An instance of a mesh point toward another meshes geometry data while storing its unique data such as material and transformation to create modified versions of them.
 
 ### Distribution Ray Tracing
 
-Distribution ray tracing refers to the effects we get with a little cost after the introduction of the multisampling to a ray tracer. For this step we were expected to implement 4 effects that can be counted as *Distribution Ray Tracing* effect. The effects are the following:
+Distribution ray tracing refers to the effects we get with a little cost after the introduction of the multisampling to a ray tracer. For this step, we were expected to implement 4 effects that can be counted as *Distribution Ray Tracing* effect. The effects are the following:
 
-- **Motion Blur :** With the addition of the time parameter to rays this effect replicates a motion blur effect thanks to random sampling of time parameter for each ray send.
+- **Motion Blur :** With the addition of the time parameter to rays this effect replicates a motion blur effect thanks to a random sampling of the time parameter for each ray send.
 - **Depth of Field :** This effect imitates the focal distance effect caused by a lens by sampling points on the lens and making the ray pass through the lens.
 - **Glossy Reflections :** This effect is achieved by altering the reflected ray with its basis vectors for a less homogenous reflected ray direction.
-- **Area Lights :** The area light effect is gotten with an area light area where we sample the lights position. Because of the change in the position of area light in each iteration in cases of soft shadow the rays can not always reach to the light situation creates the forementioned effect.
+- **Area Lights :** The area light effect is gotten with an area light area where we sample the position of the light. Because of the change in the position of area light in each iteration in cases of the soft shadow the rays can not always reach the light situation creates the aforementioned effect.
 
 
 ### XML Scene Descriptor Extensions
 
 In this iteration, there were a lot of changes to our XML scene descriptor.
 
-The PLY files supported the quads, there was the introduction of the area lights, multisampling, transformations and instancing. Each of these changes brought their fair share of updates for our XML parser. Because of the extended time I spend on the parsing section I plan to reimplement some sections with a better hierarchy for a better modifiable parser for future works.
+The PLY files supported the quads, there was the introduction of the area lights, multisampling, transformations, and instancing. Each of these changes brought its fair share of updates for our XML parser. Because of the extended time I spend on the parsing section, I plan to reimplement some sections with a better hierarchy for a better modifiable parser for future works.
 
 ### Results:
 _______________________________
 
-For this homework we were provided with 8 scenes. The following list displays these scenes sorted by their complexity and with the required techniques for their rendering :
+For this homework, we were provided with 8 scenes. The following list displays these scenes sorted by their complexity and with the required techniques for their rendering :
 1. **simple_transform.xml :** Addition of transformations.
 2. **ellipsoids.xml :** A more advanced transformation scene.
 3. **spheres_dof.xml :** Addition of depth of field, multisampling.
 4. **cornellbox_area.xml :** Addition of area lights.
 5. **cornellbox_brushed_metal.xml :** Addition of Roughness
-6. **metal_glass_plates.xml :** Addition of instancing, and second roughness based scene.
+6. **metal_glass_plates.xml :** Addition of instancing, and second roughness-based scene.
 7. **cornellbox_boxes_dynamic.xml :** Addition of motion blur, quads.
 8. **dragon_dynamic.xml :** A computationally expensive scene that uses motion blur and instancing.
 
