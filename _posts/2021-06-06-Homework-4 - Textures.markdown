@@ -244,7 +244,7 @@ For a good amount of time I did not notice there was a shift value in xml files 
 ![](/assets/img/advanced_ray_tracing_hw4/killeroo_bump_walls.png)
 {: refdef}
 
-These problems arised because of me forgetting that my inplace sorting during bvh creating mixing up my hitable indexing.
+These problems arised because of me forgetting that my inplace sorting during BVH creation mixing up my hitable indexing.
 
 {:refdef: style="text-align: center;"}
 ![](/assets/img/advanced_ray_tracing_hw4/ellipsoids_texture.png)
