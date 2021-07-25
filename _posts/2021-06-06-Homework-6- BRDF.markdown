@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Advanced Ray Tracing Homework 6 - Advanced Lighting and HDR"
+title:  "Advanced Ray Tracing Homework 6 - BRDF"
 date:  2021-07-20
 categories: [Advanced_Ray_Tracing]
 comments: true
