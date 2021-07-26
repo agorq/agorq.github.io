@@ -124,67 +124,67 @@ For this homework, we were provided with 9 scenes. 3 for each Phong and Blinn-Ph
 9. **killeroo_torrancesparrow.xml**
 
 {:refdef: style="text-align: center;"}
-![cube_point.xml rendering time : 0.1 seconds](/assets/img/advanced_ray_tracing_hw6/final/brdf_phong_original.png)
+![brdf_phong_original.xml rendering time : 0.1 seconds](/assets/img/advanced_ray_tracing_hw6/final/brdf_phong_original.png)
 {: refdef}
 <center><b> brdf_phong_original.xml </b></center>
 <center>rendering time : 0.1 seconds </center>
 
 {:refdef: style="text-align: center;"}
-![cube_directional.xml rendering time : 0.096 seconds](/assets/img/advanced_ray_tracing_hw6/final/brdf_phong_modified.png)
+![brdf_phong_modified.xml rendering time : 0.096 seconds](/assets/img/advanced_ray_tracing_hw6/final/brdf_phong_modified.png)
 {: refdef}
 <center><b> brdf_phong_modified.xml </b></center>
 <center>rendering time : 0.096 seconds </center>
 
 {:refdef: style="text-align: center;"}
-![cornellbox_area.xml rendering time : 0.094 seconds](/assets/img/advanced_ray_tracing_hw6/final/brdf_phong_modified_normalized.png)
+![brdf_phong_modified_normalized.xml rendering time : 0.094 seconds](/assets/img/advanced_ray_tracing_hw6/final/brdf_phong_modified_normalized.png)
 {: refdef}
 <center><b> brdf_phong_modified_normalized.xml </b></center>
 <center>rendering time : 0.094 seconds </center>
 
 {:refdef: style="text-align: center;"}
-![cube_point.xml rendering time : 0.093 seconds](/assets/img/advanced_ray_tracing_hw6/final/brdf_blinnphong_original.png)
+![brdf_blinnphong_original.xml rendering time : 0.093 seconds](/assets/img/advanced_ray_tracing_hw6/final/brdf_blinnphong_original.png)
 {: refdef}
 <center><b> brdf_blinnphong_original.xml </b></center>
 <center>rendering time : 0.093 seconds </center>
 
 {:refdef: style="text-align: center;"}
-![cube_directional.xml rendering time : 0.095 seconds](/assets/img/advanced_ray_tracing_hw6/final/brdf_blinnphong_modified.png)
+![brdf_blinnphong_modified.xml rendering time : 0.095 seconds](/assets/img/advanced_ray_tracing_hw6/final/brdf_blinnphong_modified.png)
 {: refdef}
 <center><b> brdf_blinnphong_modified.xml </b></center>
 <center>rendering time : 0.095 seconds </center>
 
 {:refdef: style="text-align: center;"}
-![cornellbox_area.xml rendering time : 1.07 seconds](/assets/img/advanced_ray_tracing_hw6/final/brdf_blinnphong_modified_normalized.png)
+![brdf_blinnphong_modified_normalized.xml rendering time : 1.07 seconds](/assets/img/advanced_ray_tracing_hw6/final/brdf_blinnphong_modified_normalized.png)
 {: refdef}
 <center><b> brdf_blinnphong_modified_normalized.xml </b></center>
 <center>rendering time : 1.07 seconds </center>
 
 {:refdef: style="text-align: center;"}
-![cornellbox_area.xml rendering time : 1.07 seconds](/assets/img/advanced_ray_tracing_hw6/final/brdf_torrancesparrow.png)
+![brdf_torrancesparrow.xml rendering time : 1.11 seconds](/assets/img/advanced_ray_tracing_hw6/final/brdf_torrancesparrow.png)
 {: refdef}
 <center><b> brdf_torrancesparrow.xml </b></center>
 <center>rendering time : 1.11 seconds </center>
 
 {:refdef: style="text-align: center;"}
-![head_env_light.xml rendering time : 267.122 seconds](/assets/img/advanced_ray_tracing_hw6/final/killeroo_blinnphong.png)
+![killeroo_blinnphong.xml rendering time : 11.456 seconds](/assets/img/advanced_ray_tracing_hw6/final/killeroo_blinnphong.png)
 {: refdef}
 <center><b> killeroo_blinnphong.xml </b></center>
 <center>rendering time : 11.456 seconds </center>
 
 {:refdef: style="text-align: center;"}
-![head_env_light.xml rendering time : 267.122 seconds](/assets/img/advanced_ray_tracing_hw6/final/killeroo_blinnphong_closeup.png)
+![killeroo_blinnphong.xml - closeup rendering time : 23.578 seconds](/assets/img/advanced_ray_tracing_hw6/final/killeroo_blinnphong_closeup.png)
 {: refdef}
 <center><b> killeroo_blinnphong.xml - closeup </b></center>
 <center>rendering time : 23.578 seconds </center>
 
 {:refdef: style="text-align: center;"}
-![head_env_light.xml rendering time : 267.122 seconds](/assets/img/advanced_ray_tracing_hw6/final/killeroo_torrancesparrow.png)
+![killeroo_torrancesparrow.xml rendering time : 12.374 seconds](/assets/img/advanced_ray_tracing_hw6/final/killeroo_torrancesparrow.png)
 {: refdef}
 <center><b> killeroo_torrancesparrow.xml </b></center>
 <center>rendering time : 12.374 seconds </center>
 
 {:refdef: style="text-align: center;"}
-![head_env_light.xml rendering time : 267.122 seconds](/assets/img/advanced_ray_tracing_hw6/final/killeroo_torrancesparrow_closeup.png)
+![killeroo_torrancesparrow.xml - closeup rendering time : 23.436 seconds](/assets/img/advanced_ray_tracing_hw6/final/killeroo_torrancesparrow_closeup.png)
 {: refdef}
 <center><b> killeroo_torrancesparrow.xml - closeup </b></center>
 <center>rendering time : 23.436 seconds </center>
